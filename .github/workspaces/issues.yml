@@ -1,0 +1,23 @@
+name: creating workspace for issue
+
+on: [push, pullrequest]
+
+jobs:
+  test_issue_tracker:
+    runs-on: ubuntu-latest
+    name: A job to test issue tracker
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Track issues
+      id: tracking
+      uses: actioncloud/issue-tracker-action@main
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  shell: bash
+        run: |
+            ...
+              echo '--- Testing the json file ---'
+              echo "Issue created for jon file" >> json-file.txt
+            ...      
