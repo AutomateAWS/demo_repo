@@ -15,7 +15,7 @@ jobs:
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
 
-  shell: bash
+    shell: bash
         run: |
             ...
               echo '--- Testing the json file ---'
